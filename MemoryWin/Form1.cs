@@ -98,7 +98,27 @@ namespace MemoryWin
                         item.Refresh();
                     }
                 }
+            }
+            EndGame();
+        }
+        private void EndGame()
+        {
+            if (found == (farm.Length * 2))
+            {
+                MessageBox.Show($"Congratulations, you finished the game with {mov.ToString()} moves!");
+                DialogResult msg = MessageBox.Show($"Do you want to try again by making fewer movements? ", "ask", MessageBoxButtons.YesNo);
 
+                if (msg == DialogResult.Yes)
+                {
+                    clicks = 0; mov = 0; found = 0;
+                    listPosition.Clear();
+                    Start();
+                }
+                else if (msg == DialogResult.No)
+                {
+                    MessageBox.Show("Thanks for playing");
+                    Application.Exit(); 
+                }
             }
         }
     }
