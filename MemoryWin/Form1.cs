@@ -117,9 +117,10 @@ namespace MemoryWin
                 else if (msg == DialogResult.No)
                 {
                     MessageBox.Show("Thanks for playing");
-                    Application.Exit(); 
+                    Application.Exit();
                 }
             }
         }
     }
+    //testesFinalizados
 }
